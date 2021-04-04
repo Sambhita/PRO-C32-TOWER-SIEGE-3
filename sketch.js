@@ -80,10 +80,9 @@ function setup() {
 }
 
 function draw() {
-  if(backImage)
-    background(backImage);
-  
-  Engine.update(engine);
+  if(BackG){}
+    background(BackG);
+    Engine.update(engine);
  
   strokeWeight(2);
   stroke(15);
@@ -166,18 +165,17 @@ function mouseReleased(){
 function keyPressed(){
   if(keyCode===32)
   slingShot.attach(this.ball);
-  Matter.Body.setPosition(this.bird, {x:200,y:50});
   gameState = "onSling";
 }
 
 async function backImage(){
-  var response = await fetch("https//worldtimeapi.org/api/timezone/Asia/Kolkata");
+  var response = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata");
   var responseJSON = await response.json();
 
   var datetime = responseJSON.datetime;
   var hour = datetime.slice(11,13);
 
-  if(hour>=0900 && hour<=1900){
+  if(hour>=06 && hour<=19){
       bg = "sprites/Morning.jpeg";
   }
   else{
