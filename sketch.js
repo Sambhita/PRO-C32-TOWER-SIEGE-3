@@ -12,6 +12,7 @@ var polygon_img;
 
 var gameState = "onSling"
 var bg = "sprites/Night 1.jpeg";
+var BackG;
 
 function preload(){
   backImage();
@@ -80,8 +81,9 @@ function setup() {
 }
 
 function draw() {
-  if(BackG){}
+  if(BackG){
     background(BackG);
+  }
     Engine.update(engine);
  
   strokeWeight(2);
